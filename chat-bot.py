@@ -63,8 +63,15 @@ print "Well, I'll be here if you need me..."
 offset(2)
 print "Ask me anything you want..."
 query = raw_input()
-
-
+jokes_file = 'jokes.txt'
+cannot = "Cannot find file: "
+try:
+    file_joke = open('greet.txt')
+    jokes = file_joke.read().splitlines()
+    file_joke.close()
+except IOError:
+            print cannot + jokes_file
+print random.choice(file_joke)
 
     
 
